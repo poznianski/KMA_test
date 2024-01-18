@@ -3,8 +3,8 @@ const Header = () => {
     <header className="flex justify-center items-center mb-6">
       <img
         src="src/assets/images/back.svg"
-        alt="back"
-        className="w-[30px]"
+        alt="arrow back"
+        className="w-[30px] cursor-pointer"
       />
 
       <img
