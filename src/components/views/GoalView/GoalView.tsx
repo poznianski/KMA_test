@@ -1,13 +1,27 @@
+import Button from '@components/Button/Button.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
 import Heading from '@components/TextHeader/Heading.tsx'
+import cn from 'classnames'
+import { useState } from 'react'
 
 const GoalView = () => {
+  const [selectedCards, setSelectedCards] = useState<number[]>([])
+  const active = selectedCards.length > 0
+
   const goalCards = [
     { src: 'src/assets/images/goal-4.svg', alt: 'Lose Weight' },
     { src: 'src/assets/images/goal-1.svg', alt: 'Gain Muscle' },
     { src: 'src/assets/images/goal-2.svg', alt: 'Healthy Habits' },
     { src: 'src/assets/images/goal-3.svg', alt: 'Healthy Habits' },
   ]
+
+  const handleSelect = (index: number) => {
+    setSelectedCards((prevState) =>
+      prevState.includes(index)
+        ? prevState.filter((i) => i !== index)
+        : [...prevState, index],
+    )
+  }
 
   return (
     <section>
@@ -32,15 +46,27 @@ const GoalView = () => {
         className="tracking-[0.2px] mb-3.75"
       />
 
-      <div className="grid grid-cols-2 gap-3.75">
+      <div className="grid grid-cols-2 gap-3.75 mb-28">
         {goalCards.map((card, index) => (
-          <img
-            src={card.src}
-            alt={card.alt}
+          <div
             key={index}
-          />
+            className={cn('cursor-pointer transition-all duration-300', {
+              'scale-105': selectedCards.includes(index),
+            })}
+            onClick={() => handleSelect(index)}
+          >
+            <img
+              src={card.src}
+              alt={card.alt}
+            />
+          </div>
         ))}
       </div>
+
+      <Button
+        text="Continue"
+        active={active}
+      />
     </section>
   )
 }
