@@ -36,17 +36,17 @@ const GoalView = () => {
       <Paragraph
         text="Balanced nutrition will let you achieve them"
         color="text-textSecondary"
-        className="tracking-[0.25px] mb-3.75"
+        className="mb-3.75  tracking-[0.25px]"
       />
 
       <Paragraph
         text="What are your goals?"
         weight="font-bold"
         color="text-textPrimary"
-        className="tracking-[0.2px] mb-3.75"
+        className="mb-3.75 tracking-[0.2px]"
       />
 
-      <div className="grid grid-cols-2 gap-3.75 mb-28">
+      <div className="mb-28 grid grid-cols-2 gap-3.75">
         {goalCards.map((card, index) => (
           <div
             key={index}

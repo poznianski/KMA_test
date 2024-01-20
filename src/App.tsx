@@ -6,7 +6,7 @@ import './styles/main.scss'
 
 const App = () => {
   return (
-    <div className="container mx-auto p-2 max-w-[380px]">
+    <div className="container mx-auto p-2 max-w-[23.75rem]">
       <Header />
       {/*<GoalView />*/}
       <MeasureView />

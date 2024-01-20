@@ -11,6 +11,7 @@ export default {
         primaryLight: '#5FCB3933',
         textSecondary: '#616161',
         textPrimary: '#2D3436',
+        separator: '#E1E1E1',
       },
     },
   },

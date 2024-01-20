@@ -3,14 +3,8 @@ import cn from 'classnames'
 import { useState } from 'react'
 
 const ToggleMetric = () => {
-  const [selectedType, setSelectedType] = useState<string>(IMPERIAL)
-
-  const handleTypeChange = (type: string) => {
-    setSelectedType(type)
-  }
-
   return (
-    <div className="border border-primary h-[32px] rounded-[10px] flex">
+    <div className="mb-2.5 flex h-[2rem] rounded-[0.625rem] border border-primary">
       <input
         type="radio"
         name="unit"
@@ -19,7 +13,6 @@ const ToggleMetric = () => {
         onChange={() => handleTypeChange(IMPERIAL)}
         checked={selectedType === IMPERIAL}
         className="hidden"
-        aria-checked={selectedType === IMPERIAL}
       />
       <input
         type="radio"
@@ -29,14 +22,13 @@ const ToggleMetric = () => {
         onChange={() => handleTypeChange(METRIC)}
         checked={selectedType === METRIC}
         className="hidden"
-        aria-checked={selectedType === METRIC}
       />
 
       <label
         htmlFor={IMPERIAL}
         tabIndex={0}
         className={cn(
-          'w-1/2 flex justify-center items-center font-extrabold text-xs text-primary cursor-pointer',
+          'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
             'bg-primaryLight': selectedType === IMPERIAL,
           },
@@ -46,15 +38,16 @@ const ToggleMetric = () => {
             handleTypeChange(IMPERIAL)
           }
         }}
+        aria-checked={selectedType === IMPERIAL}
       >
-        IMPERIAL
+        imperial
       </label>
 
       <label
         htmlFor={METRIC}
         tabIndex={0}
         className={cn(
-          'w-1/2 flex justify-center items-center font-extrabold text-xs text-primary cursor-pointer',
+          'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
             'bg-primaryLight': selectedType === METRIC,
           },
@@ -64,8 +57,9 @@ const ToggleMetric = () => {
             handleTypeChange(METRIC)
           }
         }}
+        aria-checked={selectedType === METRIC}
       >
-        METRIC
+        metric
       </label>
     </div>
   )
