@@ -1,3 +1,5 @@
+import { IMPERIAL, METRIC } from '@/constants.ts'
+
 export interface TextProps {
   text: string
   weight?:
@@ -14,3 +16,5 @@ export interface TextProps {
     | 'text-textPrimary'
   className?: string
 }
+
+export type MeasurementType = typeof IMPERIAL | typeof METRIC

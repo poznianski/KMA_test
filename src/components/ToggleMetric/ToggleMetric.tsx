@@ -1,8 +1,13 @@
 import { IMPERIAL, METRIC } from '@/constants.ts'
+import { MeasurementType } from '@/types/types.ts'
 import cn from 'classnames'
-import { useState } from 'react'
 
-const ToggleMetric = () => {
+interface IToggleMetric {
+  type: typeof IMPERIAL | typeof METRIC
+  handleChange: (type: MeasurementType) => void
+}
+
+const ToggleMetric = ({ type, handleChange }: IToggleMetric) => {
   return (
     <div className="mb-2.5 flex h-[2rem] rounded-[0.625rem] border border-primary">
       <input
@@ -10,8 +15,8 @@ const ToggleMetric = () => {
         name="unit"
         id={IMPERIAL}
         value={IMPERIAL}
-        onChange={() => handleTypeChange(IMPERIAL)}
-        checked={selectedType === IMPERIAL}
+        onChange={() => handleChange(IMPERIAL)}
+        checked={type === IMPERIAL}
         className="hidden"
       />
       <input
@@ -19,8 +24,8 @@ const ToggleMetric = () => {
         name="unit"
         id={METRIC}
         value={METRIC}
-        onChange={() => handleTypeChange(METRIC)}
-        checked={selectedType === METRIC}
+        onChange={() => handleChange(METRIC)}
+        checked={type === METRIC}
         className="hidden"
       />
 
@@ -30,15 +35,15 @@ const ToggleMetric = () => {
         className={cn(
           'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
-            'bg-primaryLight': selectedType === IMPERIAL,
+            'bg-primaryLight': type === IMPERIAL,
           },
         )}
         onKeyDown={(e) => {
           if (e.key === ' ' || e.key === 'Enter') {
-            handleTypeChange(IMPERIAL)
+            handleChange(IMPERIAL)
           }
         }}
-        aria-checked={selectedType === IMPERIAL}
+        aria-checked={type === IMPERIAL}
       >
         imperial
       </label>
@@ -49,15 +54,15 @@ const ToggleMetric = () => {
         className={cn(
           'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
-            'bg-primaryLight': selectedType === METRIC,
+            'bg-primaryLight': type === METRIC,
           },
         )}
         onKeyDown={(e) => {
           if (e.key === ' ' || e.key === 'Enter') {
-            handleTypeChange(METRIC)
+            handleChange(METRIC)
           }
         }}
-        aria-checked={selectedType === METRIC}
+        aria-checked={type === METRIC}
       >
         metric
       </label>
