@@ -6,7 +6,7 @@ import { useState } from 'react'
 
 const GoalView = () => {
   const [selectedCards, setSelectedCards] = useState<number[]>([])
-  const active = selectedCards.length > 0
+  const isActive = selectedCards.length > 0
 
   const goalCards = [
     { src: 'src/assets/images/goal-4.svg', alt: 'Lose Weight' },
@@ -65,7 +65,7 @@ const GoalView = () => {
 
       <Button
         text="Continue"
-        active={active}
+        isActive={isActive}
       />
     </section>
   )

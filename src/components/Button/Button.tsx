@@ -2,16 +2,16 @@ import cn from 'classnames'
 
 interface ButtonProps {
   text: string
-  active: boolean
+  isActive: boolean
 }
 
-const Button = ({ text, active }: ButtonProps) => {
+const Button = ({ text, isActive }: ButtonProps) => {
   return (
     <button
       className={cn(
         'text-white w-full rounded-xl bg-primary h-[3.125rem] text-bold',
         {
-          'opacity-30': !active,
+          'opacity-30': !isActive,
         },
       )}
     >
