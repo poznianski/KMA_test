@@ -1,5 +1,6 @@
 import { IMPERIAL } from '@/constants.ts'
 import { MeasurementType } from '@/types/types.ts'
+import Button from '@components/Button/Button.tsx'
 import Input from '@components/Input/Input.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
 import Heading from '@components/TextHeader/Heading.tsx'
@@ -8,6 +9,10 @@ import { useState } from 'react'
 
 const MeasureView = () => {
   const [selectedType, setSelectedType] = useState<MeasurementType>(IMPERIAL)
+  const [height, setHeight] = useState('')
+  const [weight, setWeight] = useState('')
+
+  const allowNext = height !== '' && weight !== ''
 
   const handleTypeChange = (type: MeasurementType) => {
     setSelectedType(type)
@@ -31,11 +36,22 @@ const MeasureView = () => {
       <Input
         placeholder="Height"
         type={selectedType}
+        value={height}
+        onChange={(e) => setHeight(e.target.value)}
       />
 
       <Input
         placeholder="Current Weight"
         type={selectedType}
+        value={weight}
+        onChange={(e) => setWeight(e.target.value)}
+      />
+
+      <Button
+        text="Continue"
+        isActive={allowNext}
+        tooltipId="continue"
+        tooltipContent="You forgot to enter values :)"
       />
     </section>
   )

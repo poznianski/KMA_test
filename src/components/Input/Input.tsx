@@ -1,11 +1,14 @@
 import { HEIGHT, IMPERIAL, METRIC, WEIGHT } from '@/constants.ts'
+import React from 'react'
 
 interface IInput {
   placeholder: string
   type: typeof IMPERIAL | typeof METRIC
+  value: string
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-const Input = ({ placeholder, type }: IInput) => {
+const Input = ({ placeholder, type, value, onChange }: IInput) => {
   const renderEnding = () => {
     const placeholderLower = placeholder.toLowerCase()
 
@@ -29,6 +32,8 @@ const Input = ({ placeholder, type }: IInput) => {
       type="number"
       className="mb-2.5 h-[4rem] w-full rounded-[0.625rem] border border-separator pl-3.75 outline-0"
       placeholder={`${placeholder} (${renderEnding()})`}
+      value={value}
+      onChange={onChange}
     />
   )
 }
