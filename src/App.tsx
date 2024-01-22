@@ -36,7 +36,8 @@ const App = () => {
   return (
     <div className="container mx-auto max-w-[23.75rem] p-2">
       <Header />
-      {renderStep()}
+      {/*{renderStep()}*/}
+      <ResultView />
     </div>
   )
 }
