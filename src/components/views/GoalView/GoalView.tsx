@@ -10,10 +10,10 @@ const GoalView = ({ onContinue }: ViewProps) => {
   const isActive = selectedCards.length > 0
 
   const goalCards = [
-    { src: 'src/assets/images/goals/goal-4.svg', alt: 'Lose Weight' },
-    { src: 'src/assets/images/goals/goal-1.svg', alt: 'Gain Muscle' },
-    { src: 'src/assets/images/goals/goal-2.svg', alt: 'Healthy Habits' },
-    { src: 'src/assets/images/goals/goal-3.svg', alt: 'Healthy Habits' },
+    { src: '/assets/images/goals/goal-4.svg', alt: 'Lose Weight' },
+    { src: '/assets/images/goals/goal-1.svg', alt: 'Gain Muscle' },
+    { src: '/assets/images/goals/goal-2.svg', alt: 'Healthy Habits' },
+    { src: '/assets/images/goals/goal-3.svg', alt: 'Healthy Habits' },
   ]
 
   return (

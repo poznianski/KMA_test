@@ -41,7 +41,7 @@ wants to lose kilos and works at the office"
 
       <div className="mb-28 flex items-center justify-center gap-3.75">
         <img
-          src="src/assets/images/other/active-girl.svg"
+          src="/assets/images/other/active-girl.svg"
           alt=""
         />
 
