@@ -13,7 +13,7 @@ const Button = ({ text, isActive, tooltipContent, tooltipId }: ButtonProps) => {
     <>
       <button
         className={cn(
-          'text-bold h-[3.125rem] w-full rounded-xl bg-primary text-white',
+          'h-[3.125rem] w-full rounded-xl bg-primary text-lg font-bold text-white',
           {
             'cursor-not-allowed opacity-30': !isActive,
           },

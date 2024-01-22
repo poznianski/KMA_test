@@ -1,19 +1,19 @@
 const Header = () => {
   return (
-    <header className="flex justify-center items-center mb-6">
+    <header className="mb-6 flex items-center justify-center">
       <img
-        src="src/assets/images/back.svg"
+        src="src/assets/images/other/back.svg"
         alt="arrow back"
         className="w-[30px] cursor-pointer"
       />
 
       <img
-        src="src/assets/images/avocado.svg"
+        src="src/assets/images/other/avocado.svg"
         alt="avocado with cute face"
-        className="w-[30px] mr-2.5"
+        className="mr-2.5 w-[30px]"
       />
 
-      <span className="text-textPrimary font-semibold text-lg tracking-tight">
+      <span className="text-lg font-semibold tracking-tight text-textPrimary">
         Food Mentor
       </span>
     </header>

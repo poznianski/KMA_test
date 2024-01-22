@@ -1,9 +1,9 @@
 import { IMPERIAL } from '@/constants.ts'
 import { MeasurementType } from '@/types/types.ts'
 import Button from '@components/Button/Button.tsx'
+import Heading from '@components/Heading/Heading.tsx'
 import Input from '@components/Input/Input.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
-import Heading from '@components/TextHeader/Heading.tsx'
 import ToggleMetric from '@components/ToggleMetric/ToggleMetric.tsx'
 import { useState } from 'react'
 

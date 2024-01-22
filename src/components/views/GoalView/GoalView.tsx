@@ -1,27 +1,19 @@
+import { useSelectedCards } from '@/hooks/useSelectedCards.tsx'
 import Button from '@components/Button/Button.tsx'
+import Heading from '@components/Heading/Heading.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
-import Heading from '@components/TextHeader/Heading.tsx'
 import cn from 'classnames'
-import { useState } from 'react'
 
 const GoalView = () => {
-  const [selectedCards, setSelectedCards] = useState<number[]>([])
+  const { selectedCards, toggleCardSelection } = useSelectedCards<number>()
   const isActive = selectedCards.length > 0
 
   const goalCards = [
-    { src: 'src/assets/images/goal-4.svg', alt: 'Lose Weight' },
-    { src: 'src/assets/images/goal-1.svg', alt: 'Gain Muscle' },
-    { src: 'src/assets/images/goal-2.svg', alt: 'Healthy Habits' },
-    { src: 'src/assets/images/goal-3.svg', alt: 'Healthy Habits' },
+    { src: 'src/assets/images/goals/goal-4.svg', alt: 'Lose Weight' },
+    { src: 'src/assets/images/goals/goal-1.svg', alt: 'Gain Muscle' },
+    { src: 'src/assets/images/goals/goal-2.svg', alt: 'Healthy Habits' },
+    { src: 'src/assets/images/goals/goal-3.svg', alt: 'Healthy Habits' },
   ]
-
-  const handleSelect = (index: number) => {
-    setSelectedCards((prevState) =>
-      prevState.includes(index)
-        ? prevState.filter((i) => i !== index)
-        : [...prevState, index],
-    )
-  }
 
   return (
     <section>
@@ -36,7 +28,7 @@ const GoalView = () => {
       <Paragraph
         text="Balanced nutrition will let you achieve them"
         color="text-textSecondary"
-        className="mb-3.75  tracking-[0.25px]"
+        className="mb-3.75 tracking-[0.25px]"
       />
 
       <Paragraph
@@ -53,7 +45,7 @@ const GoalView = () => {
             className={cn('cursor-pointer transition-all duration-300', {
               'scale-105': selectedCards.includes(index),
             })}
-            onClick={() => handleSelect(index)}
+            onClick={() => toggleCardSelection(index)}
           >
             <img
               src={card.src}
