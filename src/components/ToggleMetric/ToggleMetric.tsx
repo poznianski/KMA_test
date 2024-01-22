@@ -33,7 +33,7 @@ const ToggleMetric = ({ type, handleChange }: IToggleMetric) => {
         htmlFor={IMPERIAL}
         tabIndex={0}
         className={cn(
-          'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
+          'label-hover-underline flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
             'bg-primaryLight': type === IMPERIAL,
           },
@@ -45,14 +45,14 @@ const ToggleMetric = ({ type, handleChange }: IToggleMetric) => {
         }}
         aria-checked={type === IMPERIAL}
       >
-        imperial
+        <span>imperial</span>
       </label>
 
       <label
         htmlFor={METRIC}
         tabIndex={0}
         className={cn(
-          'flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
+          'label-hover-underline flex w-1/2 cursor-pointer items-center justify-center text-xs font-extrabold uppercase text-primary',
           {
             'bg-primaryLight': type === METRIC,
           },
@@ -64,7 +64,7 @@ const ToggleMetric = ({ type, handleChange }: IToggleMetric) => {
         }}
         aria-checked={type === METRIC}
       >
-        metric
+        <span>metric</span>
       </label>
     </div>
   )

@@ -15,7 +15,7 @@ const ExerciseView = ({ onContinue }: ViewProps) => {
     { text: 'Fitness 5-7 \n' + 'times a week' },
   ]
 
-  const allowNext = exerciseCards.length > 0
+  const allowNext = selectedCard !== null
 
   const toggleSelectCard = (index: number) => {
     selectedCard === index ? setSelectedCard(null) : setSelectedCard(index)
@@ -50,7 +50,7 @@ wants to lose kilos and works at the office"
             <div
               key={index}
               className={cn(
-                'flex h-[3.75rem] cursor-pointer items-center justify-start rounded-[0.625rem] border border-separator p-3.75 pr-8',
+                'card-hover-underline flex h-[3.75rem] cursor-pointer items-center justify-start rounded-[0.625rem] border border-separator p-3.75 pr-8',
                 {
                   'scale-105': selectedCard === index,
                 },

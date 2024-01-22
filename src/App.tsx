@@ -16,8 +16,6 @@ const App = () => {
     setCurrentStep((prevState) => prevState + 1)
   }
 
-  console.log(currentStep)
-
   const renderStep = () => {
     switch (currentStep) {
       case 1:
@@ -36,8 +34,7 @@ const App = () => {
   return (
     <div className="container mx-auto max-w-[23.75rem] p-2">
       <Header />
-      {/*{renderStep()}*/}
-      <ResultView />
+      {renderStep()}
     </div>
   )
 }

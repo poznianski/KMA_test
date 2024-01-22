@@ -43,9 +43,12 @@ const GoalView = ({ onContinue }: ViewProps) => {
         {goalCards.map((card, index) => (
           <div
             key={index}
-            className={cn('cursor-pointer transition-all duration-300', {
-              'scale-105': selectedCards.includes(index),
-            })}
+            className={cn(
+              'card-hover-underline cursor-pointer transition-all duration-300',
+              {
+                'scale-105': selectedCards.includes(index),
+              },
+            )}
             onClick={() => toggleCardSelection(index)}
           >
             <img

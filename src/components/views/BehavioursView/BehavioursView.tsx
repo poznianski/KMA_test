@@ -25,7 +25,7 @@ const BehavioursView = ({ onContinue }: ViewProps) => {
           <div
             key={index}
             className={cn(
-              'flex h-[3.75rem] cursor-pointer items-center justify-center rounded-[0.625rem] border border-separator p-3.75 pr-8',
+              'card-hover-underline flex h-[3.75rem] cursor-pointer items-center justify-center rounded-[0.625rem] border border-separator p-3.75 pr-8',
               {
                 'scale-105': selectedCards.includes(index),
               },

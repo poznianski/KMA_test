@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+$primary: #5fcb39;
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -14,4 +16,77 @@ input[type='number'] {
 
 body {
   font-family: 'Inter', sans-serif;
+}
+
+.hover-text-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.hover-text-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: white;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.hover-text-underline:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.label-hover-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.label-hover-underline span {
+  position: relative;
+}
+
+.label-hover-underline span::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: $primary;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.label-hover-underline:hover span::after {
+  width: 100%;
+  left: 0;
+}
+
+.card-hover-underline {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-hover-underline::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: $primary;
+  transition:
+    width 0.3s ease,
+    left 0.3s ease;
+}
+
+.card-hover-underline:hover::after {
+  width: 80%;
+  left: 10%;
 }

@@ -36,7 +36,7 @@ const Button = ({
         tabIndex={0}
         onClick={handleClickNext}
       >
-        {text}
+        <span className="hover-text-underline">{text}</span>
       </button>
 
       {!isActive && <Tooltip id={tooltipId} />}

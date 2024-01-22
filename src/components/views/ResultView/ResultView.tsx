@@ -13,7 +13,7 @@ const ResultView = () => {
   return (
     <section>
       <Heading
-        text={showLoader ? 'Your Plan' : " Oops! It's not developed yet :D "}
+        text={showLoader ? 'Your Plan' : " Oops! It's not done yet :D "}
       />
 
       <Paragraph
