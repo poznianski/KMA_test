@@ -1,10 +1,11 @@
 import { useSelectedCards } from '@/hooks/useSelectedCards.tsx'
+import { ViewProps } from '@/types/types.ts'
 import Button from '@components/Button/Button.tsx'
 import Heading from '@components/Heading/Heading.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
 import cn from 'classnames'
 
-const GoalView = () => {
+const GoalView = ({ onContinue }: ViewProps) => {
   const { selectedCards, toggleCardSelection } = useSelectedCards<number>()
   const isActive = selectedCards.length > 0
 
@@ -58,6 +59,9 @@ const GoalView = () => {
       <Button
         text="Continue"
         isActive={isActive}
+        tooltipId="continue"
+        tooltipContent="Select at least one :)"
+        onClick={onContinue}
       />
     </section>
   )

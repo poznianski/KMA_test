@@ -9,6 +9,7 @@ export default {
       colors: {
         primary: '#5FCB39',
         primaryLight: '#5FCB3933',
+        primaryActive: 'rgba(82,255,0,0.91)',
         textSecondary: '#616161',
         textPrimary: '#2D3436',
         separator: '#E1E1E1',

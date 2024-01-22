@@ -1,11 +1,12 @@
 import { useSelectedCards } from '@/hooks/useSelectedCards.tsx'
+import { ViewProps } from '@/types/types.ts'
 import Button from '@components/Button/Button.tsx'
 import Heading from '@components/Heading/Heading.tsx'
 import Paragraph from '@components/Paragraph/Paragraph.tsx'
 import { behaviourCards } from '@components/views/BehavioursView/behaviorCards.config.ts'
 import cn from 'classnames'
 
-const BehavioursView = () => {
+const BehavioursView = ({ onContinue }: ViewProps) => {
   const { selectedCards, toggleCardSelection } = useSelectedCards<number>()
   const allowNext = selectedCards.length > 0
 
@@ -19,7 +20,7 @@ const BehavioursView = () => {
         className="mb-3.75 tracking-[0.25px]"
       />
 
-      <div className="mb mb-28 grid grid-cols-2 gap-3.75">
+      <div className="mb-28 grid grid-cols-2 gap-3.75">
         {behaviourCards.map((card, index) => (
           <div
             key={index}
@@ -49,6 +50,7 @@ const BehavioursView = () => {
         isActive={allowNext}
         tooltipId="continue"
         tooltipContent="Please select at least one!"
+        onClick={onContinue}
       />
     </section>
   )

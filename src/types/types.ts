@@ -18,3 +18,7 @@ export interface TextProps {
 }
 
 export type MeasurementType = typeof IMPERIAL | typeof METRIC
+
+export interface ViewProps {
+  onContinue: () => void
+}

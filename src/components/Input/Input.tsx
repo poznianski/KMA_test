@@ -6,9 +6,10 @@ interface IInput {
   type: typeof IMPERIAL | typeof METRIC
   value: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  className?: string
 }
 
-const Input = ({ placeholder, type, value, onChange }: IInput) => {
+const Input = ({ placeholder, type, value, onChange, className }: IInput) => {
   const renderEnding = () => {
     const placeholderLower = placeholder.toLowerCase()
 
@@ -29,8 +30,8 @@ const Input = ({ placeholder, type, value, onChange }: IInput) => {
 
   return (
     <input
-      type="number"
-      className="mb-2.5 h-[4rem] w-full rounded-[0.625rem] border border-separator pl-3.75 outline-0"
+      type="text"
+      className={`mb-2.5 h-[4rem] w-full rounded-[0.625rem] border border-separator pl-3.75 outline-0 ${className}`}
       placeholder={`${placeholder} (${renderEnding()})`}
       value={value}
       onChange={onChange}
