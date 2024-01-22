@@ -28,7 +28,7 @@ const GoalView = () => {
       <Paragraph
         text="Balanced nutrition will let you achieve them"
         color="text-textSecondary"
-        className="mb-3.75 tracking-[0.25px]"
+        className="mb-3.75 leading-6 tracking-[0.25px]"
       />
 
       <Paragraph

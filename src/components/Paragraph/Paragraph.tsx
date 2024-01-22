@@ -8,7 +8,9 @@ const Paragraph = ({
   className,
 }: TextProps) => {
   return (
-    <p className={`text-center ${weight} ${size} ${color} ${className}`}>
+    <p
+      className={`text-center leading-6 ${weight} ${size} ${color} ${className}`}
+    >
       {text}
     </p>
   )

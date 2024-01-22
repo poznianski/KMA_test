@@ -6,7 +6,11 @@ const Heading = ({
   size = 'text-2xl',
   color = 'text-textPrimary',
 }: TextProps) => {
-  return <h1 className={`text-center ${weight} ${size} ${color}`}>{text}</h1>
+  return (
+    <h1 className={`text-center leading-9 ${weight} ${size} ${color}`}>
+      {text}
+    </h1>
+  )
 }
 
 export default Heading
